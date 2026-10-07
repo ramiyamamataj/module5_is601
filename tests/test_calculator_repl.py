@@ -18,6 +18,11 @@ def test_calculator_facade_operations():
     assert facade.undo() == "Undo successful."
     assert len(facade.show_history()) == 2
 
+def test_calculator_facade_empty_undo_redo():
+    facade = CalculatorFacade()
+    assert facade.undo() == "Nothing to undo."
+    assert facade.redo() == "Nothing to redo."
+
 def test_history_capacity_overflow():
     facade = CalculatorFacade()
     from app.calculator_config import CalculatorConfig
