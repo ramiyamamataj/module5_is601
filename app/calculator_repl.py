@@ -13,7 +13,7 @@ class CalculatorFacade(HistorySubject):
         self.history_manager = HistoryManager()
         self.caretaker = HistoryCaretaker()
 
-        if CalculatorConfig.AUTO_SAVE:  # pragma: no cover
+        if CalculatorConfig.AUTO_SAVE:
             self.attach(AutoSaveObserver(self.history_manager))
 
     def load_history(self):

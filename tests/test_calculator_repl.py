@@ -23,6 +23,11 @@ def test_calculator_facade_empty_undo_redo():
     assert facade.undo() == "Nothing to undo."
     assert facade.redo() == "Nothing to redo."
 
+def test_calculator_facade_load_history():
+    facade = CalculatorFacade()
+    facade.load_history()
+    assert isinstance(facade.history, list)
+
 def test_history_capacity_overflow():
     facade = CalculatorFacade()
     from app.calculator_config import CalculatorConfig
